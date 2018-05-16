@@ -5,6 +5,7 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
+    <!--会自动记载springmvc-servlet.xml-->
     <servlet-name>springmvc</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <!--<init-param>-->
@@ -12,6 +13,8 @@
       <!--<param-value>classpath:springmvc-config.xml</param-value>-->
     <!--</init-param>-->
   </servlet>
+
+  <!--请求url和servlet的映射关系-->
   <servlet-mapping>
     <servlet-name>springmvc</servlet-name>
     <url-pattern>/</url-pattern>

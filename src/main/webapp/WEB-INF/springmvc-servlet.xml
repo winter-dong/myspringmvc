@@ -5,24 +5,23 @@
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
-
-
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="com.songxd.controller"/>
-    <context:annotation-config/>
+    <!--spring bean的扫描路径 <context:annotation-config/>可省略-->
+    <context:component-scan base-package="com.songxd"/>
+    <!--动态请求和静态请求分离-->
     <mvc:default-servlet-handler/>
+    <!--使@Controller生效-->
     <mvc:annotation-driven/>
 
-
+    <!--定义视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
-            <value>/WEB-INF/pages/</value>
+            <value>/WEB-INF/views/</value>
         </property>
         <property name="suffix" >
             <value>.html</value>
         </property>
     </bean>
-
 </beans>
